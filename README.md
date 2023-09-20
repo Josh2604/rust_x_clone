@@ -1,18 +1,28 @@
 # (X) Twitter Clone app
 
-## Instalación de diesel cli
+## Dependencies
+
+* Install mysql or use a docker instance
+
+## Configs
+
+### Diesel CLI installation
 ```
 cargo install diesel_cli
 ```
-En caso de no requerir la instalacion de las features por defecto
-* Incluye mysql por defecto y en caso de no tenerlo instalado este fallara
+* in error case run the next command
 
 ```
 cargo install diesel_cli --no-default-features --features mysql
 ```
+### Run
+```
+cargo run
+```
 
-## Tablas
-
+## Diesel usage
+### Tables
+Create tables
 ```
 diesel migration generate create_tweets
 diesel migration generate create_likes
@@ -23,7 +33,14 @@ diesel migration generate create_likes
 diesel setup
 ```
 
-### Running migratios
+### Migrations
+
+Create migrations
 ```
 diesel migration run
+```
+
+Rollback
+```
+diesel migration revert
 ```
